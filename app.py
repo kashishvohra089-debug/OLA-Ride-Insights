@@ -12,7 +12,7 @@ st.set_page_config(
 # Load dataset
 @st.cache_data
 def load_data():
-    df = pd.read_csv("../Python/ola_cleaned.csv")
+    df= pd.read_csv("ola_cleaned.csv.gz", compression="gzip")   
     df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
     return df
 
